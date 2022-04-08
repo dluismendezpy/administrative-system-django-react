@@ -37,6 +37,7 @@ class BaseModel(models.Model):
     """Base model for others models"""
     name = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
+    last_updated = models.DateTimeField(auto_now=True)
 
     class Meta:
         abstract=True
@@ -70,6 +71,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     gender = models.CharField(max_length=10, choices=Gender.choices, default=Gender.MALE)
     date_of_birth = models.DateField(null=True, blank=True)
     is_latino = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
     phone = models.CharField(max_length=50, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)

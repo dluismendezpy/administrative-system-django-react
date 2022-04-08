@@ -1,30 +1,25 @@
-# Ownss
+# Django
 from django.contrib import admin
 
 # Owns
-from .models import User, City
+from .models import Service, Board
 
 
-@admin.register(User)
-class UserAdmin(admin.ModelAdmin):
-    """class for User admin"""
+@admin.register(Service)
+class ServiceAdmin(admin.ModelAdmin):
+    """Admin for Service model"""
     fields = (
-        "first_name",
-        "last_name",
-        "email",
-        "is_latino",
-        "gender",
+        "name",
+        "is_active",
+        "created_at",
     )
     list_display = (
-        "first_name",
-        "last_name",
-        "email",
+        "name",
         "is_active",
-        "is_latino",
-        "gender",
+        "created_at",
     )
     list_display_links = (
-        "first_name",
+        "name",
     )
     readonly_fields = (
         "created_at",
@@ -34,15 +29,19 @@ class UserAdmin(admin.ModelAdmin):
     )
 
 
-@admin.register(City)
-class CityAdmin(admin.ModelAdmin):
-    """class for City model"""
+@admin.register(Board)
+class BoardAdmin(admin.ModelAdmin):
+    """Admin for Board model"""
     fields = (
         "name",
+        "user",
+        "service",
+        "is_active",
         "created_at",
     )
     list_display = (
         "name",
+        "is_active",
         "created_at",
     )
     list_display_links = (
