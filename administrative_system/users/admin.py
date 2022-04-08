@@ -12,7 +12,6 @@ class UserAdmin(admin.ModelAdmin):
         "first_name",
         "last_name",
         "email",
-        "is_active",
         "is_latino",
         "gender",
     )
