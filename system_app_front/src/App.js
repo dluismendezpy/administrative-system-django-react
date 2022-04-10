@@ -1,6 +1,6 @@
 import "./App.css";
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Navigation from "./pages/Navigation";
@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 export default function App() {
   return (
     <Routes>
-      <Route path="home" element={<Home />} />
+      <Route path="/" element={<Home />} />
       <Route path="navigation" element={<Navigation />} />
       <Route path="service" element={<Service />} />
       <Route path="*" element={<NoMatch />} />
