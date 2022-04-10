@@ -19,6 +19,7 @@ export default class Navigation extends React.Component {
             <Nav.Link href="/seguridad">Seguridad</Nav.Link>
             <Nav.Link href="/precios"> Precios </Nav.Link>
             <Nav.Link href="/sobrenosotros">Sobre nosotros</Nav.Link>
+            <Nav.Link href="/service">Services</Nav.Link>
           </Nav>
           <Nav className="md-12">
             <Nav.Link href="/login">Iniciar Sesion</Nav.Link>
