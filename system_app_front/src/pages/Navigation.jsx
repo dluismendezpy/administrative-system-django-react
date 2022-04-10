@@ -1,14 +1,15 @@
 import React from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap"
 import "../styles/Navigation.css"
+import brand from "../images/logoprincipal.png"
 
 export default class Navigation extends React.Component {
   render() {
     return (
       <Navbar bg="dark" variant="dark" >
         <Container className="text-white">
-          
-          <Navbar.Brand href="/home">React-Bootstrap</Navbar.Brand>
+          <img className="d-inline-block align-top" height="50px" alt="Brand" src={brand}></img>
+          <Navbar.Brand href="/home">Mendez Services</Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="/seguridad">Seguridad</Nav.Link>
             <Nav.Link href="/precios"> Precios </Nav.Link>
