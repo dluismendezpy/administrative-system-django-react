@@ -9,7 +9,6 @@ export default class Navigation extends React.Component {
     return (
       <Navbar bg="dark" variant="dark">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" />
         <Container className="text-white">
           <img
             className="d-inline-block align-top"
@@ -26,8 +25,7 @@ export default class Navigation extends React.Component {
               Seguridad
             </NavLink>
             <NavLink to="/precios" className="d-inline p-2 bg-dark text-white">
-              {" "}
-              Precios{" "}
+              Precios
             </NavLink>
             <NavLink
               to="/sobrenosotros"
@@ -36,7 +34,7 @@ export default class Navigation extends React.Component {
               Sobre nosotros
             </NavLink>
             <NavLink to="/service" className="d-inline p-2 bg-dark text-white">
-              Service
+              Servicios
             </NavLink>
           </Nav>
           <Nav className="md-12">
