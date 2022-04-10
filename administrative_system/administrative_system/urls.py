@@ -7,3 +7,7 @@ urlpatterns = [
     path("users/", include("users.urls")),
     path("services/", include("services.urls")),
 ]
+
+admin.site.site_header = "MS Mendez Services"
+admin.site.site_title = "Welcome"
+admin.site.index_title = "MS Mendez Services"
