@@ -1,3 +1,8 @@
 .footer {
-  background-color: #a9a9a9;
+  background-color: rgb(33, 37, 41);
+  color: antiquewhite;
+  bottom: 0px;
+  z-index:0;
+  right:0px;
+  left: 0px;
 }

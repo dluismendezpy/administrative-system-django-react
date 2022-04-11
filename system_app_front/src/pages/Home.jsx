@@ -10,7 +10,7 @@ import img3 from "../images/card3.jpg";
 export default class Home extends React.Component {
   render() {
     return (
-      <div className="body">
+      <div className="bodyhome">
         <Navigation />
 
         <div className="let">

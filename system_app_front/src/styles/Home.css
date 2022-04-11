@@ -1,5 +1,11 @@
-.body {
+.bodyhome {
   background-color: #e6e6e6;
+  background-image: url(../images/5.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  
 }
 
 .let {

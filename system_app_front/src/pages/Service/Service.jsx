@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import "./Service.css";
 import Navigation from "../Navigation";
+import Footer from "../Footer";
 
 export default class Service extends React.Component {
   constructor(props) {
@@ -35,6 +36,7 @@ export default class Service extends React.Component {
             </div>
           ))}
         </div>
+        <Footer />
       </div>
     );
   }

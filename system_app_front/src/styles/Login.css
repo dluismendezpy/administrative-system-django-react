@@ -1,0 +1,23 @@
+.bodylogin {
+    background-color: #e6e6e6;
+}
+
+.containe {
+    padding: 130px; 
+    margin: 10px;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+}
+
+.form {
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    backdrop-filter: blur(50px);
+    background-color: rgb(33, 37, 41);
+    color: #e6e6e6;
+    width: 100%;
+    padding: 10px 20px;
+}
