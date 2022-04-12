@@ -18,7 +18,7 @@ export default class Service extends React.Component {
       dataSource: [],
       isOpenModalAgregar: false,
       isOpenModalDetalles: false,
-      name: "",
+      data: {name: ""}
     };
   }
 
@@ -43,37 +43,23 @@ export default class Service extends React.Component {
 
   handleChange = (e) => {
     this.setState({
-      name: {
-        ...this.state.name,
+      data: {
+        ...this.state.data,
         [e.target.name]: e.target.value,
       },
     });
   };
 
-  agregar() {
-    try {
-      axios({
-        method: "post",
-        url: "http://127.0.0.1:8000/services/serive-create/",
-        data: {
-          name: [this.state.name],
-        },
-      });
-      this.closeModalAgregar();
-    } catch (e) {
-      console.log(e);
-    }
-    /* axios.post('http://127.0.0.1:8000/services/serive-create/', {
-      name: [this.state.dataSource.name]
+  agregar = (e) => {
+  
+    console.log(this.state.data);
+    fetch("http://127.0.0.1:8000/services/serive-create/", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(this.state.data),
     })
-    .then(function (response) {
-      console.log(response);
-      
-      this.closeModalAgregar();
-    })
-    .catch(function (error) {
-      console.log(error);
-    });*/
+    .then(this.closeModalAgregar())
+    .catch((error) => console.log(error));
   }
 
   render() {
