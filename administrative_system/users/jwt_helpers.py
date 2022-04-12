@@ -10,7 +10,8 @@ import jwt
 from .models import User
 
 
-class JwtAuthentication(BaseAuthentication):
+class JWTAuthentication(BaseAuthentication):
+    """Custom Json Web Token class auth"""
     def authenticate(self, request):
         auth_header = get_authorization_header(request)
         auth_data = auth_header.decode("utf-8")

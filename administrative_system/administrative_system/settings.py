@@ -136,8 +136,5 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 # Rest Framework
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'users.jwt_helpers.JwtAuthentication',
-    ],
     "NON_FIELD_ERROR_KEY": "err"
 }
