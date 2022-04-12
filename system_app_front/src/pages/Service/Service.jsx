@@ -1,21 +1,26 @@
 import React from "react";
 import axios from "axios";
-import "./Service.css";
-import Navigation from "../Navigation";
-import Footer from "../Footer";
+import "../Service/Service.css";
+import Navigation from "../../components/Navigation/Navigation";
+import Footer from "../../components/Footer/Footer";
 import { Modal, Button, FormGroup, ModalBody, ModalFooter } from "react-bootstrap";
 
 export default class Service extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { dataSource: [], isOpen: false };
+    this.state = { 
+      dataSource: [], 
+      isOpenModalAgregar: false, 
+      isOpenModalDetalles: false, 
+      name: "" 
+    };
   }
 
-  openModalDetalles = () => this.setState({ isOpen: true });
-  closeModalDetalles = () => this.setState({ isOpen: false });
+  openModalDetalles = () => this.setState({ isOpenModalDetalles: true });
+  closeModalDetalles = () => this.setState({ isOpenModalDetalles: false });
 
-  openModalAgregar = () => this.setState({ isOpen: true });
-  closeModalAgregar = () => this.setState({ isOpen: false });
+  openModalAgregar = () => this.setState({ isOpenModalAgregar: true });
+  closeModalAgregar = () => this.setState({ isOpenModalAgregar: false });
 
   componentDidMount() {
     this.interval = setInterval(() => {
@@ -32,27 +37,40 @@ export default class Service extends React.Component {
 
   handleChange = (e) => {
     this.setState({
-      dataSource: {
-        ...this.state.dataSource,
+      name: {
+        ...this.state.name,
         [e.target.name]: e.target.value
       },
     });
   };
 
-  agregar() {
+  agregar() {   
+    
     try {
-      const response = await axios ({
-        url: "http://127.0.0.1:8000/services/service-list/",
-        method: "POST",
-        data: this.state.dataSource,
+      axios({
+        method: 'post',
+        url: 'http://127.0.0.1:8000/services/serive-create/',
+        data: {
+          name: [this.state.name]
+        }
+      });
+      this.closeModalAgregar()
 
-      })
-      return response;
-    }
-    catch (e) {
+    } catch (e) {
       console.log(e)
     }
-  }
+     /* axios.post('http://127.0.0.1:8000/services/serive-create/', {
+      name: [this.state.dataSource.name]
+    })
+    .then(function (response) {
+      console.log(response);
+      
+      this.closeModalAgregar();
+    })
+    .catch(function (error) {
+      console.log(error);
+    });*/
+  };
 
   render() {
     return (
@@ -67,7 +85,7 @@ export default class Service extends React.Component {
               Add
           </Button>
 
-          <Modal show={this.state.isOpen} onHide={this.closeModalAgregar}>
+          <Modal show={this.state.isOpenModalAgregar} onHide={this.closeModalAgregar}>
             <Modal.Header closeButton>
               <Modal.Title> Add Service </Modal.Title>
             </Modal.Header>
@@ -75,7 +93,7 @@ export default class Service extends React.Component {
             <ModalBody>
               <FormGroup>
                 <label> Name: </label>
-                <input className="form-control" name="nombre" type="text" onChange={this.handleChange}/>
+                <input className="form-control" name="name" type="text" onChange={this.handleChange}/>
               </FormGroup>
             </ModalBody>
 
@@ -97,7 +115,7 @@ export default class Service extends React.Component {
                 Mostrar detalles
               </Button>
 
-              <Modal show={this.state.isOpen} onHide={this.closeModalDetalles}>
+              <Modal show={this.state.isOpenModalDetalles} onHide={this.closeModalDetalles}>
                 <Modal.Header closeButton>
                   <Modal.Title>{item.name}</Modal.Title>
                 </Modal.Header>
@@ -110,8 +128,9 @@ export default class Service extends React.Component {
               </Modal>
             </div>
           ))}
-        </div>
-        <Footer />
+          </div>
+          
+          <Footer />
       </div>
     );
   }
