@@ -1,11 +1,11 @@
 import React from "react";
 import "../styles/Home.css";
-import Navigation from "./Navigation";
-import Footer from "./Footer";
+import Navigation from "../components/Navigation/Navigation";
+import Footer from "../components/Footer/Footer";
 import { Card } from "react-bootstrap";
-import img1 from "../images/card1.png";
-import img2 from "../images/card2.jpg";
-import img3 from "../images/card3.jpg";
+import img1 from "../assets/images/card1.png";
+import img2 from "../assets/images/card2.jpg";
+import img3 from "../assets/images/card3.jpg";
 
 export default class Home extends React.Component {
   render() {
