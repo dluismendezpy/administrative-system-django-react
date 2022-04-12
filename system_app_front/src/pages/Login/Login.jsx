@@ -37,15 +37,15 @@ export default class Login extends React.Component {
         <Navigation />
 
         <div className="containe">
-          <h1> Login </h1>
+          <h1> Iniciar sesión </h1>
           <div className="form">
             <Form>
               <Form.Group className="mb-3">
-                <Form.Label> Email </Form.Label>
+                <Form.Label> Correo Electrónico </Form.Label>
                 <Form.Control
                   type="email"
                   name="email"
-                  placeholder="Enter email"
+                  placeholder="Correo Electrónico"
                   value={this.state.dataSource.email}
                   onChange={this.inputChanged}
                 />
@@ -53,18 +53,18 @@ export default class Login extends React.Component {
               </Form.Group>
 
               <Form.Group className="mb-3">
-                <Form.Label> Password </Form.Label>
+                <Form.Label> Contraseña </Form.Label>
                 <Form.Control
                   type="password"
                   name="password"
-                  placeholder="Enter password"
+                  placeholder="Contraseña"
                   value={this.state.dataSource.password}
                   onChange={this.inputChanged}
                 />
               </Form.Group>
 
               <Button variant="outline-primary" onClick={this.login}>
-                Iniciar sesion
+                Iniciar sesión
               </Button>
             </Form>
           </div>

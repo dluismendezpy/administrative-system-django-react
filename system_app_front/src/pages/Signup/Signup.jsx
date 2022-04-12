@@ -41,40 +41,40 @@ export default class Signup extends React.Component {
           <div className="form">
             <Form>
               <Form.Group className="mb-3">
-                <Form.Label> Email </Form.Label>
+                <Form.Label> Correo Electrónico </Form.Label>
                 <Form.Control
                   type="email"
                   name="email"
-                  placeholder="Enter email"
+                  placeholder="Correo Electrónico"
                   value={this.state.dataSource.email}
                   onChange={this.inputChanged}
                 />
               </Form.Group>
 
               <Form.Group className="mb-3">
-                <Form.Label> Username </Form.Label>
+                <Form.Label> Usuario </Form.Label>
                 <Form.Control
                   type="text"
                   name="username"
-                  placeholder="Enter username"
+                  placeholder="Usuario"
                   value={this.state.dataSource.usernname}
                   onChange={this.inputChanged}
                 />
               </Form.Group>
 
               <Form.Group className="mb-3">
-                <Form.Label> Password </Form.Label>
+                <Form.Label> Contraseña </Form.Label>
                 <Form.Control
                   type="password"
                   name="password"
-                  placeholder="Enter password"
+                  placeholder="contraseña"
                   value={this.state.dataSource.password}
                   onChange={this.inputChanged}
                 />
               </Form.Group>
 
               <Button variant="outline-primary" onClick={this.signup}>
-                Registrar
+                Crear cuenta
               </Button>
             </Form>
           </div>
