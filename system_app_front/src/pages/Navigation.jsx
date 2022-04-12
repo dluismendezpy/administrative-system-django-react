@@ -41,7 +41,7 @@ export default class Navigation extends React.Component {
             <NavLink to="/login" className="d-inline p-2 bg-dark text-white">
               Iniciar Sesion
             </NavLink>
-            <Button href="/registrarse" variant="light">
+            <Button href="/signup" variant="light">
               Probar Gratis
             </Button>
           </Nav>

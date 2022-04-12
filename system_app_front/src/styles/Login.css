@@ -9,6 +9,8 @@
     max-width: 800px;
     margin: auto;
     position: relative;
+    backdrop-filter: blur(50px);
+    background-color: rgb(243, 243, 243);
 }
 
 .form {

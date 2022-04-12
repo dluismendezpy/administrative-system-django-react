@@ -7,6 +7,7 @@ import Navigation from "./pages/Navigation";
 import Service from "./pages/Service/Service";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
       <Route path="navigation" element={<Navigation />} />
       <Route path="service" element={<Service />} />
       <Route path="login" element={<Login />} />
+      <Route path="signup" element={<Signup />} />
       <Route path="*" element={<NoMatch />} />
     </Routes>
   );
