@@ -20,7 +20,7 @@ export default class Login extends React.Component {
     })
       .then((data) => data.json())
       .then((data) => {
-        console.log(data.token);
+        console.log(data);
       })
       .catch((error) => console.log(error));
   };

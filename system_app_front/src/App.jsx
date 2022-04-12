@@ -8,8 +8,8 @@ import Service from "./pages/Service/Service";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
-import SobreNosotros from "./pages/SobreNosotros/SobreNosotros"
-import Precios from "./pages/Precios/Precios"
+import SobreNosotros from "./pages/SobreNosotros/SobreNosotros";
+import Precios from "./pages/Precios/Precios";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 

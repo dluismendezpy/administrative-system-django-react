@@ -1,33 +1,32 @@
 .bodySN {
-    background-color: #e6e6e6;
-    background-image: url(../../assets/images/5.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-  }
-  
-  .let {
-    padding: 15px;
-    margin: 50px;
-    margin-left: 30px;
-  }
-  
-  h1 {
-    color: rgb(29, 94, 214);
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  h3 {
-    color: crimson;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  h4 {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  .cards {
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  }
-  
+  background-color: #e6e6e6;
+  background-image: url(../../assets/images/5.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.let {
+  padding: 15px;
+  margin: 50px;
+  margin-left: 30px;
+}
+
+h1 {
+  color: rgb(29, 94, 214);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+  color: crimson;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cards {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}

@@ -12,45 +12,31 @@ export default class Home extends React.Component {
     return (
       <div className="bodyP">
         <Navigation />
-            <div className="let">
-                <div className="row">
-
-                    <div className="col-md-4">
-                        <Carousel>
-                            <Carousel.Item>
-                                <img
-                                className="d-block w-100"
-                                src={img1}
-                                alt="First slide"
-                                />
-                            </Carousel.Item>
-                        </Carousel>
-                    </div>
-                    <div className="col-md-4">
-                        <Carousel>
-                            <Carousel.Item>
-                                <img
-                                className="d-block w-100"
-                                src={img2}
-                                alt="First slide"
-                                />
-                            </Carousel.Item>
-                        </Carousel>
-                    </div>
-                    <div className="col-md-4">
-                        <Carousel>
-                            <Carousel.Item>
-                                <img
-                                className="d-block w-100"
-                                src={img3}
-                                alt="First slide"
-                                />
-                            </Carousel.Item>
-                        </Carousel>
-                    </div>
- 
-                </div>
+        <div className="let">
+          <div className="row">
+            <div className="col-md-4">
+              <Carousel>
+                <Carousel.Item>
+                  <img className="d-block w-100" src={img1} alt="First slide" />
+                </Carousel.Item>
+              </Carousel>
+            </div>
+            <div className="col-md-4">
+              <Carousel>
+                <Carousel.Item>
+                  <img className="d-block w-100" src={img2} alt="First slide" />
+                </Carousel.Item>
+              </Carousel>
+            </div>
+            <div className="col-md-4">
+              <Carousel>
+                <Carousel.Item>
+                  <img className="d-block w-100" src={img3} alt="First slide" />
+                </Carousel.Item>
+              </Carousel>
+            </div>
           </div>
+        </div>
         <Footer />
       </div>
     );
