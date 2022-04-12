@@ -3,16 +3,22 @@ import axios from "axios";
 import "../Service/Service.css";
 import Navigation from "../../components/Navigation/Navigation";
 import Footer from "../../components/Footer/Footer";
-import { Modal, Button, FormGroup, ModalBody, ModalFooter } from "react-bootstrap";
+import {
+  Modal,
+  Button,
+  FormGroup,
+  ModalBody,
+  ModalFooter,
+} from "react-bootstrap";
 
 export default class Service extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
-      dataSource: [], 
-      isOpenModalAgregar: false, 
-      isOpenModalDetalles: false, 
-      name: "" 
+    this.state = {
+      dataSource: [],
+      isOpenModalAgregar: false,
+      isOpenModalDetalles: false,
+      name: "",
     };
   }
 
@@ -39,27 +45,25 @@ export default class Service extends React.Component {
     this.setState({
       name: {
         ...this.state.name,
-        [e.target.name]: e.target.value
+        [e.target.name]: e.target.value,
       },
     });
   };
 
-  agregar() {   
-    
+  agregar() {
     try {
       axios({
-        method: 'post',
-        url: 'http://127.0.0.1:8000/services/serive-create/',
+        method: "post",
+        url: "http://127.0.0.1:8000/services/serive-create/",
         data: {
-          name: [this.state.name]
-        }
+          name: [this.state.name],
+        },
       });
-      this.closeModalAgregar()
-
+      this.closeModalAgregar();
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
-     /* axios.post('http://127.0.0.1:8000/services/serive-create/', {
+    /* axios.post('http://127.0.0.1:8000/services/serive-create/', {
       name: [this.state.dataSource.name]
     })
     .then(function (response) {
@@ -70,7 +74,7 @@ export default class Service extends React.Component {
     .catch(function (error) {
       console.log(error);
     });*/
-  };
+  }
 
   render() {
     return (
@@ -80,29 +84,44 @@ export default class Service extends React.Component {
         <h1>Services</h1>
 
         <div className="btnagregar mb-4">
-
           <Button variant="success" onClick={this.openModalAgregar}>
-              Add
+            Add
           </Button>
 
-          <Modal show={this.state.isOpenModalAgregar} onHide={this.closeModalAgregar}>
+          <Modal
+            show={this.state.isOpenModalAgregar}
+            onHide={this.closeModalAgregar}
+          >
             <Modal.Header closeButton>
               <Modal.Title> Add Service </Modal.Title>
             </Modal.Header>
-            
+
             <ModalBody>
               <FormGroup>
                 <label> Name: </label>
-                <input className="form-control" name="name" type="text" onChange={this.handleChange}/>
+                <input
+                  className="form-control"
+                  name="name"
+                  type="text"
+                  onChange={this.handleChange}
+                />
               </FormGroup>
             </ModalBody>
 
             <ModalFooter>
-              <Button variant="primary" onClick={() => this.agregar()}> Aceptar </Button>
-              <Button variant="secondary" onClick={() => this.closeModalAgregar()}> Cancelar </Button>
-            </ModalFooter> 
+              <Button variant="primary" onClick={() => this.agregar()}>
+                {" "}
+                Aceptar{" "}
+              </Button>
+              <Button
+                variant="secondary"
+                onClick={() => this.closeModalAgregar()}
+              >
+                {" "}
+                Cancelar{" "}
+              </Button>
+            </ModalFooter>
           </Modal>
-
         </div>
 
         <div className="item-container">
@@ -115,7 +134,10 @@ export default class Service extends React.Component {
                 Mostrar detalles
               </Button>
 
-              <Modal show={this.state.isOpenModalDetalles} onHide={this.closeModalDetalles}>
+              <Modal
+                show={this.state.isOpenModalDetalles}
+                onHide={this.closeModalDetalles}
+              >
                 <Modal.Header closeButton>
                   <Modal.Title>{item.name}</Modal.Title>
                 </Modal.Header>
@@ -128,9 +150,9 @@ export default class Service extends React.Component {
               </Modal>
             </div>
           ))}
-          </div>
-          
-          <Footer />
+        </div>
+
+        <Footer />
       </div>
     );
   }

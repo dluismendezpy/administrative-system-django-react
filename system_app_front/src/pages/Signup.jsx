@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import "../styles/Login.css";
+import "./Login/Login.css";
 import Navigation from "../components/Navigation/Navigation";
 import Footer from "../components/Footer/Footer";
 import { Button, Form } from "react-bootstrap";

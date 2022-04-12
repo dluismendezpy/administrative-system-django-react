@@ -1,12 +1,12 @@
-import "./App.css";
+import "./styles/App.css";
 
 import { Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Navigation from "./components/Navigation/Navigation";
 import Service from "./pages/Service/Service";
 import NoMatch from "./pages/NoMatch";
-import Login from "./pages/Login";
+import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup";
 import "bootstrap/dist/css/bootstrap.min.css";
 

@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
-import "../styles/Login.css";
-import Navigation from "../components/Navigation/Navigation";
-import Footer from "../components/Footer/Footer";
+import "./Login.css";
+import Navigation from "../../components/Navigation/Navigation";
+import Footer from "../../components/Footer/Footer";
 import { Button, Form } from "react-bootstrap";
 
 export default class Login extends React.Component {
@@ -23,7 +23,7 @@ export default class Login extends React.Component {
         this.setState({ dataSource });
       });
     }, 500);
-  };
+  }
 
   componentWillUnmount() {
     clearInterval(this.interval);

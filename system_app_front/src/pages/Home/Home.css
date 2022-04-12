@@ -1,6 +1,6 @@
 .bodyhome {
   background-color: #e6e6e6;
-  background-image: url(../assets/images/5.jpg);
+  background-image: url(../../assets/images/5.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -29,5 +29,4 @@ h4 {
 
 .cards {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-
 }
