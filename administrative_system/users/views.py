@@ -1,12 +1,11 @@
 # Django
-from django.shortcuts import render
+from django.contrib.auth import authenticate
 
 # Rest Framework
-from rest_framework import generics, status
-from rest_framework.response import Response
+from rest_framework import generics, status, response, permissions
 
 # Owns
-from .serializers import UserSerializer
+from .serializers import UserSerializer, LoginSerializer
 
 
 class SignUpView(generics.GenericAPIView):
@@ -14,11 +13,43 @@ class SignUpView(generics.GenericAPIView):
     serializer_class = UserSerializer
 
     def post(self, request):
-        user = request.data
-        serializer = self.serializer_class(data=user)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
+        serializer = self.serializer_class(data=request.data)
 
-        user_data = serializer.data
+        if serializer.is_valid():
+            serializer.save()
 
-        return Response(user_data, status=status.HTTP_201_CREATED)
+            return response.Response(serializer.data, status=status.HTTP_201_CREATED)
+
+        return response.Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class LoginView(generics.GenericAPIView):
+    """View for users login"""
+    serializer_class = LoginSerializer
+
+    def post(self, request):
+        email = request.data.get("email", None)
+        password = request.data.get("password", None)
+        user = authenticate(username=email, password=password)
+
+        if user:
+            serializer = self.serializer_class(user)
+
+            return response.Response(serializer.data, status=status.HTTP_200_OK)
+
+        return response.Response(
+            {"message": "Invalid username or password. Try again!"},
+            status=status.HTTP_401_UNAUTHORIZED
+        )
+
+
+class AuthView(generics.GenericAPIView):
+    """View for authentication"""
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get(self, request):
+        serializer = UserSerializer(request.user)
+        return response.Response({"user": serializer.data})
+
+
+
