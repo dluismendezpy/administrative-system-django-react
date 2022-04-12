@@ -11,7 +11,7 @@ export default class Login extends React.Component {
     this.state = { dataSource: { email: "", password: "", username: "" } };
   }
 
-  login = (event) => {
+  login = () => {
     console.log(this.state.dataSource);
     fetch("http://127.0.0.1:8000/users/login/", {
       method: "POST",
@@ -55,7 +55,7 @@ export default class Login extends React.Component {
               <Form.Group className="mb-3">
                 <Form.Label> Password </Form.Label>
                 <Form.Control
-                  type="text"
+                  type="password"
                   name="password"
                   placeholder="Enter password"
                   value={this.state.dataSource.password}
