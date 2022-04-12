@@ -23,7 +23,6 @@ export default class Login extends React.Component {
         this.setState({ dataSource });
       });
     }, 500);
-    alert(this.state.dataSource.username)
   };
 
   componentWillUnmount() {
