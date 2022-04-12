@@ -1,10 +1,14 @@
 # Django
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.conf import settings
+import jwt
+from datetime import datetime, timedelta
 
 
 class UserManager(BaseUserManager):
     """Manager for user model"""
+
     def create_user(self, username, email, password=None):
         if username is None:
             raise TypeError("You must have an Username")
@@ -40,7 +44,7 @@ class BaseModel(models.Model):
     last_updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        abstract=True
+        abstract = True
 
     def __str__(self) -> str:
         return self.name
@@ -76,6 +80,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     created_at = models.DateTimeField(auto_now_add=True)
     last_updated = models.DateTimeField(auto_now=True)
 
+    EMAIL_FIELD = "email"
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ("username",)
 
@@ -86,3 +91,14 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def full_name(self) -> str:
         return f"{self.first_name} {self.last_name or ''}"
+
+    @property
+    def token(self) -> str:
+        token = jwt.encode({
+            "username": self.username,
+            "email": self.email,
+            "exp": datetime.utcnow() + timedelta(hours=24)},
+            settings.SECRET_KEY,
+            algorithm="HS256",
+        )
+        return token
