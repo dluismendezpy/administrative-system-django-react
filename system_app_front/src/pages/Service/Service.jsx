@@ -18,7 +18,7 @@ export default class Service extends React.Component {
       dataSource: [],
       isOpenModalAgregar: false,
       isOpenModalDetalles: false,
-      data: {name: ""}
+      data: { name: "" },
     };
   }
 
@@ -51,16 +51,15 @@ export default class Service extends React.Component {
   };
 
   agregar = (e) => {
-  
     console.log(this.state.data);
     fetch("http://127.0.0.1:8000/services/serive-create/", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(this.state.data),
     })
-    .then(this.closeModalAgregar())
-    .catch((error) => console.log(error));
-  }
+      .then(this.closeModalAgregar())
+      .catch((error) => console.log(error));
+  };
 
   render() {
     return (

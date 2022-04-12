@@ -37,7 +37,7 @@ export default class Signup extends React.Component {
         <Navigation />
 
         <div className="containe">
-          <h1> Signup </h1>
+          <h1> Registrate </h1>
           <div className="form">
             <Form>
               <Form.Group className="mb-3">
