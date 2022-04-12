@@ -6,6 +6,17 @@ from rest_framework import generics, status, response, permissions
 
 # Owns
 from .serializers import UserSerializer, LoginSerializer
+from .jwt_helpers import JWTAuthentication
+
+
+class AuthView(generics.GenericAPIView):
+    """View for authentication"""
+    authentication_classes = (JWTAuthentication, )
+    permission_classes = (permissions.IsAuthenticated,)
+
+    def get(self, request):
+        serializer = UserSerializer(request.user)
+        return response.Response({"user": serializer.data})
 
 
 class SignUpView(generics.GenericAPIView):
@@ -41,15 +52,3 @@ class LoginView(generics.GenericAPIView):
             {"message": "Invalid username or password. Try again!"},
             status=status.HTTP_401_UNAUTHORIZED
         )
-
-
-class AuthView(generics.GenericAPIView):
-    """View for authentication"""
-    permission_classes = (permissions.IsAuthenticated,)
-
-    def get(self, request):
-        serializer = UserSerializer(request.user)
-        return response.Response({"user": serializer.data})
-
-
-
