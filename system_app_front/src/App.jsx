@@ -8,6 +8,9 @@ import Service from "./pages/Service/Service";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
+import SobreNosotros from "./pages/SobreNosotros/SobreNosotros"
+import Precios from "./pages/Precios/Precios"
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {
@@ -18,6 +21,8 @@ export default function App() {
       <Route path="service" element={<Service />} />
       <Route path="login" element={<Login />} />
       <Route path="signup" element={<Signup />} />
+      <Route path="sobrenosotros" element={<SobreNosotros />} />
+      <Route path="precios" element={<Precios />} />
       <Route path="*" element={<NoMatch />} />
     </Routes>
   );
