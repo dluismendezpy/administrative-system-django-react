@@ -7,11 +7,7 @@ export default class Footer extends React.Component {
     return (
       <div className="footer">
         <div class="text-center p-4">
-          © 2022 Copyright:
-          <a class="text-reset fw-bold" href="/">
-            {" "}
-            MendezServices.com
-          </a>
+          © 2022 MS Mendez Services. All Rights Reserved
         </div>
       </div>
     );
