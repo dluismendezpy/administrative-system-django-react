@@ -67,11 +67,11 @@ export default class Service extends React.Component {
       <div>
         <Navigation />
 
-        <h1>Services</h1>
+        <h1>servicios</h1>
 
         <div className="btnagregar mb-4">
           <Button variant="success" onClick={this.openModalAgregar}>
-            Add
+            Agregar
           </Button>
 
           <Modal
@@ -79,12 +79,12 @@ export default class Service extends React.Component {
             onHide={this.closeModalAgregar}
           >
             <Modal.Header closeButton>
-              <Modal.Title> Add Service </Modal.Title>
+              <Modal.Title> Agregar servicio </Modal.Title>
             </Modal.Header>
 
             <ModalBody>
               <FormGroup>
-                <label> Name: </label>
+                <label>Nombre:</label>
                 <input
                   className="form-control"
                   name="name"
@@ -96,15 +96,13 @@ export default class Service extends React.Component {
 
             <ModalFooter>
               <Button variant="primary" onClick={() => this.agregar()}>
-                {" "}
-                Aceptar{" "}
+                Aceptar
               </Button>
               <Button
                 variant="secondary"
                 onClick={() => this.closeModalAgregar()}
               >
-                {" "}
-                Cancelar{" "}
+                Cancelar
               </Button>
             </ModalFooter>
           </Modal>

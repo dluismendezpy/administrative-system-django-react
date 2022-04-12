@@ -1,6 +1,7 @@
 # Rest Framework
 from rest_framework import serializers
 from rest_framework.authtoken.models import Token
+from rest_framework_simplejwt.tokens import RefreshToken, TokenError
 
 # Owns
 from .models import User
@@ -38,3 +39,23 @@ class LoginSerializer(serializers.ModelSerializer):
         model = User
         fields = ("username", "email", "password", "token")
         read_only_fields = ("token",)
+
+
+class LogoutSerializer(serializers.ModelSerializer):
+    """Serializer for logout"""
+    refresh = serializers.CharField()
+
+    default_error_messages = {
+        "bad_token": "Token is invalid or expired!"
+    }
+
+    def validate(self, attrs):
+        self.token = attrs["refresh"]
+
+        return attrs
+
+    def save(self, **kwargs):
+        try:
+            RefreshToken(self.token).blacklist()
+        except TokenError:
+            self.fail("Token Invalid!")

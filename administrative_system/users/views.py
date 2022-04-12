@@ -4,8 +4,11 @@ from django.contrib.auth import authenticate
 # Rest Framework
 from rest_framework import generics, status, response, permissions
 
+# rest_framework_simplejwt
+from rest_framework_simplejwt.authentication import JWTAuthentication as JWTAuth
+
 # Owns
-from .serializers import UserSerializer, LoginSerializer
+from .serializers import UserSerializer, LoginSerializer, LogoutSerializer
 from .jwt_helpers import JWTAuthentication
 
 
@@ -52,3 +55,20 @@ class LoginView(generics.GenericAPIView):
             {"message": "Invalid username or password. Try again!"},
             status=status.HTTP_401_UNAUTHORIZED
         )
+
+
+class LogoutView(generics.GenericAPIView):
+    """Logout View"""
+    serializer_class = LogoutSerializer
+    permission_classes = (permissions.IsAuthenticated,)
+    authentication_classes = (JWTAuth,)
+
+    def post(self, request):
+        serializer = self.serializer_class(data=request.data)
+
+        if serializer.is_valid():
+            serializer.save()
+
+            return response.Response(serializer.data, status=status.HTTP_204_NO_CONTENT)
+
+        return response.Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
