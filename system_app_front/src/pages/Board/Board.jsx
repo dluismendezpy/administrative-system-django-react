@@ -30,7 +30,7 @@ export default class Board extends React.Component {
 
   componentDidMount() {
     this.interval = setInterval(() => {
-      axios.get("http://127.0.0.1:8000/services/service-list/").then((res) => {
+      axios.get("http://127.0.0.1:8000/services/board-list/").then((res) => {
         const dataSource = res.data;
         this.setState({ dataSource });
       });
@@ -52,7 +52,7 @@ export default class Board extends React.Component {
 
   agregar = (e) => {
     console.log(this.state.data);
-    fetch("http://127.0.0.1:8000/services/serive-create/", {
+    fetch("http://127.0.0.1:8000/services/board-create/", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(this.state.data),
@@ -66,12 +66,12 @@ export default class Board extends React.Component {
       <div>
         <Navigation />
 
-        <h1>Boards</h1>
+        <h1>Tableros</h1>
 
         <div className="btnagregar mb-4">
-          <Button variant="success" onClick={this.openModalAgregar}>
-            Add
-          </Button>
+          <a href="http://127.0.0.1:8000/admin/services/board/add/" target="_blank" className="btn btn-success">
+            Agregar
+          </a>
 
           <Modal
             show={this.state.isOpenModalAgregar}
@@ -95,15 +95,13 @@ export default class Board extends React.Component {
 
             <ModalFooter>
               <Button variant="primary" onClick={() => this.agregar()}>
-                {" "}
-                Aceptar{" "}
+                Aceptar
               </Button>
               <Button
                 variant="secondary"
                 onClick={() => this.closeModalAgregar()}
               >
-                {" "}
-                Cancelar{" "}
+                Cancelar
               </Button>
             </ModalFooter>
           </Modal>
