@@ -66,7 +66,7 @@ export default class Board extends React.Component {
       <div>
         <Navigation />
 
-        <h1>Services</h1>
+        <h1>Boards</h1>
 
         <div className="btnagregar mb-4">
           <Button variant="success" onClick={this.openModalAgregar}>
@@ -78,7 +78,7 @@ export default class Board extends React.Component {
             onHide={this.closeModalAgregar}
           >
             <Modal.Header closeButton>
-              <Modal.Title> Add Service </Modal.Title>
+              <Modal.Title> Add Board </Modal.Title>
             </Modal.Header>
 
             <ModalBody>

@@ -36,6 +36,9 @@ export default class Navigation extends React.Component {
             <NavLink to="/service" className="d-inline p-2 bg-dark text-white">
               Servicios
             </NavLink>
+            <NavLink to="/board" className="d-inline p-2 bg-dark text-white">
+              Tableros
+            </NavLink>
           </Nav>
           <Nav className="md-12">
             <NavLink to="/login" className="d-inline p-2 bg-dark text-white">
