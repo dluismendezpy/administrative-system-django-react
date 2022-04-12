@@ -1,8 +1,8 @@
 import React from "react";
 import { Navbar, Container, Nav, Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
-import "../styles/Navigation.css";
-import brand from "../images/logoprincipal.png";
+import "./Navigation.css";
+import brand from "../../images/logoprincipal.png";
 
 export default class Navigation extends React.Component {
   render() {

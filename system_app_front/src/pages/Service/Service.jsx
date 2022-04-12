@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 import "./Service.css";
-import Navigation from "../Navigation";
-import Footer from "../Footer";
+import Navigation from "../../components/Navigation/Navigation";
+import Footer from "../../components/Footer/Footer";
 import { Modal, Button } from "react-bootstrap";
 
 export default class Service extends React.Component {

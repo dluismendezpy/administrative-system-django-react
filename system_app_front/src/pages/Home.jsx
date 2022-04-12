@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/Home.css";
-import Navigation from "./Navigation";
-import Footer from "./Footer";
+import Navigation from "../components/Navigation/Navigation";
+import Footer from "../components/Footer/Footer";
 import { Card } from "react-bootstrap";
 import img1 from "../images/card1.png";
 import img2 from "../images/card2.jpg";

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Footer.css";
+import "./Footer.css";
 import "react-bootstrap";
 
 export default class Footer extends React.Component {
