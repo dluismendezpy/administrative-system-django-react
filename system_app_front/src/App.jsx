@@ -7,7 +7,7 @@ import Navigation from "./components/Navigation/Navigation";
 import Service from "./pages/Service/Service";
 import NoMatch from "./pages/NoMatch";
 import Login from "./pages/Login/Login";
-import Signup from "./pages/Signup";
+import Signup from "./pages/Signup/Signup";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function App() {

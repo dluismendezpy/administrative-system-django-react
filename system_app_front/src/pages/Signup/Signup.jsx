@@ -1,17 +1,17 @@
 import React from "react";
 import axios from "axios";
-import "./Login.css";
+import "./Signup.css";
 import Navigation from "../../components/Navigation/Navigation";
 import Footer from "../../components/Footer/Footer";
 import { Button, Form } from "react-bootstrap";
 
-export default class Login extends React.Component {
+export default class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = { dataSource: { email: "", password: "", username: "" } };
   }
 
-  login = (event) => {
+  signup = (event) => {
     console.log(this.state.dataSource);
     fetch("http://127.0.0.1:8000/users/login/", {
       method: "POST",
@@ -37,7 +37,7 @@ export default class Login extends React.Component {
         <Navigation />
 
         <div className="containe">
-          <h1> Login </h1>
+          <h1> Signup </h1>
           <div className="form">
             <Form>
               <Form.Group className="mb-3">
@@ -49,7 +49,17 @@ export default class Login extends React.Component {
                   value={this.state.dataSource.email}
                   onChange={this.inputChanged}
                 />
-                {/*<Form.Text className="text-muted">Only Letters.</Form.Text>*/}
+              </Form.Group>
+
+              <Form.Group className="mb-3">
+                <Form.Label> Username </Form.Label>
+                <Form.Control
+                  type="text"
+                  name="username"
+                  placeholder="Enter username"
+                  value={this.state.dataSource.usernname}
+                  onChange={this.inputChanged}
+                />
               </Form.Group>
 
               <Form.Group className="mb-3">
@@ -63,8 +73,8 @@ export default class Login extends React.Component {
                 />
               </Form.Group>
 
-              <Button variant="outline-primary" onClick={this.login}>
-                Iniciar sesion
+              <Button variant="outline-primary" onClick={this.signup}>
+                Registrar
               </Button>
             </Form>
           </div>
