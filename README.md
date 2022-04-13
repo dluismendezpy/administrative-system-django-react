@@ -5,7 +5,7 @@ This app was build using Django Rest Framework on the backend and ReactJS on the
 #### -Step 1: clone repo
 `https://github.com/dluismendezpy/administrative-system-django-react.git`
 #### -Step 2:  enviroment
-- Django
+Django
 
 
     cd administrative_system/
@@ -13,14 +13,14 @@ This app was build using Django Rest Framework on the backend and ReactJS on the
     source venv/bin/activate
     pip install -r requirements.txt
     python manage.py migrate
-	python manage.py createsuperuser
+    python manage.py createsuperuser
     python manage.py runserver
 
-- React JS
+React JS
 
 
-	cd system_app_front/
-	npm i
+    cd system_app_front/
+    npm i
 
 #### Step 3: Open browser
 Go to `http://localhost:8000/admin` for admin
