@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 import "./Signup.css";
 import Navigation from "../../components/Navigation/Navigation";
 import Footer from "../../components/Footer/Footer";
