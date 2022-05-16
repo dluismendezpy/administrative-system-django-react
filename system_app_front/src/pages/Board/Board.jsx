@@ -69,7 +69,7 @@ export default class Board extends React.Component {
         <h1>Tableros</h1>
 
         <div className="btnagregar mb-4">
-          <a href="http://127.0.0.1:8000/admin/services/board/add/" target="_blank" className="btn btn-success">
+          <a href="http://127.0.0.1:8000/admin/services/board/add/" target="_blank" rel="noreferrer" className="btn btn-success">
             Agregar
           </a>
 
